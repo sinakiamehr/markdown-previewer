@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [text, setText] = useState("");
+  const [markText, setMarkText] = useState("");
   const initialText = `
 # Heading 1
 
@@ -27,13 +28,19 @@ with multiple lines.
 
 **This is bolded text.**
 `;
+  // const preview = document.getElementById("preview");
+
   const handleChange = (e) => {
     const output = e.target.value;
     setText(output);
+    setMarkText(marked.parse(output));
+    // document.getElementById("preview").innerHTML = marked.parse(output);
+    // preview.innerHTML = marked.parse(output);
   };
 
   useEffect(() => {
     setText(initialText);
+    setMarkText(marked.parse(initialText));
   }, []);
 
   return (
@@ -47,7 +54,10 @@ with multiple lines.
           value={text}
         ></textarea>
         <label for="preview">Previewer</label>
-        <textarea id="preview" value={marked(text)}></textarea>
+        <div id="preview" dangerouslySetInnerHTML={{ __html: markText }}>
+          {/* {text} */}
+          {/* {markText} */}
+        </div>
       </header>
     </div>
   );
