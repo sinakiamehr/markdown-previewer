@@ -1,18 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -31,7 +16,7 @@
 #editor {
   background-color: white;
   color: black;
-  height: 80vh;
+  height: 30vh;
   width: 50vw;
   font-size: 0.7em;
 }
@@ -42,13 +27,34 @@
   height: 30vh;
   width: 55vw;
   font-size: 0.7em;
+  overflow-wrap: break-word;
+  word-wrap: break-word; /* for older browsers */
+  overflow: auto; /* allows scrolling if needed */
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Handle code blocks and inline code */
+#preview code {
+  white-space: pre-wrap;     /* makes long code lines wrap */
+  word-wrap: break-word;
 }
+
+#preview pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow: auto;            /* horizontal scroll if too long */
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* Ensure images stay inside the box */
+#preview img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+}
+
+

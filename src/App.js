@@ -55,8 +55,7 @@ with multiple lines.
         ></textarea>
         <label for="preview">Previewer</label>
         <div id="preview" dangerouslySetInnerHTML={{ __html: markText }}>
-          {/* {text} */}
-          {/* {markText} */}
+          
         </div>
       </header>
     </div>
