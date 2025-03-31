@@ -13,6 +13,7 @@
   color: #61dafb;
 }
 
+<<<<<<< HEAD
 #editor {
   background-color: white;
   color: black;
@@ -40,6 +41,15 @@
 #preview code {
   white-space: pre-wrap;     /* makes long code lines wrap */
   word-wrap: break-word;
+=======
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+>>>>>>> parent of d02bb34 (final without css styling)
 }
 
 #preview pre {
