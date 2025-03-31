@@ -47,10 +47,7 @@ with multiple lines.
           value={text}
         ></textarea>
         <label for="preview">Previewer</label>
-        <div id="preview" dangerouslySetInnerHTML={{ __html: markText }}>
-          {/* {text} */}
-          {/* {markText} */}
-        </div>
+        <textarea id="preview" value={marked(text)}></textarea>
       </header>
     </div>
   );
